@@ -7,7 +7,7 @@
 
 <h3>Objective:</h3>
 
-<p>The project aims to provide a simplified college search application where users can search different colleges of their chice and obtain information about that college.</p>
+<p>The project aims to provide a simplified college search application where users can search different colleges of their choice and obtain information about that college.</p>
 
 <h3>Key Features:</h3>
 
