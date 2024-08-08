@@ -35,5 +35,6 @@
       </code>
       </pre>
       Then change db config in flask app like username , password and your database name to your username , password and newly created databse name.<br>
+     After importing databse ,save the database in the same folder along with static and template folder.<br>
    5.Open folder in VS code or any editor<br>
    6.Run the app.py and click on the localhost link generated.<br></p>
