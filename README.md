@@ -34,6 +34,6 @@
       mysql -u [your username] -p [new_database_name] < [dump_file.sql]
       </code>
       </pre>
-      Then change db config in flask app like username , password and your databse name to your username , password and newly created databse name.<br>
+      Then change db config in flask app like username , password and your database name to your username , password and newly created databse name.<br>
    5.Open folder in VS code or any editor<br>
    6.Run the app.py and click on the localhost link generated.<br></p>
