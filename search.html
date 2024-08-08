@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeMaster.com</title>
+    <!-- Stylesheet link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Google Material Icons used for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  </head>
+  <body>
+
+    <!-- Navbar Section -->
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CollegeMaster</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+       <div style="display:flex; flex-direction:column; gap:5px;">
+      <div style="background-color:white; height:2px; width:25px;"></div>
+      <div style="background-color:white; height:2px; width:25px;"></div>
+       <div style="background-color:white; height:2px; width:25px;"></div>
+       </div>
+     </label>
+
+        <ul class="all-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Landingpage setion -->
+    <section class="Landingpage" id="home">
+      <div class="Landingpage" style="background-image: url('{{ url_for('static', filename='img4.jpg') }}'); ">
+      <div class="content">
+        <div class="text">
+          <h1>Explore Your College Journey</h1>
+          <p>Discover, compare, and choose from thousands of colleges <br> in India for your perfect academic fit.</p>
+        </div>
+          <!-- Search Box -->
+          <div class="input-box">
+        <i class="uil uil-search"></i>
+        <input type="text" id="search-input" placeholder="Search your dream college here..." />
+        <button class="button" onclick="searchRedirect()">Search</button>
+    </div>         
+      </div>
+    </section>
+
+
+   <!--Script Tag for search functionality -->
+    <script>
+        function searchRedirect() {
+            // Get the search input value and trim any extra spaces
+            var query = encodeURIComponent(document.getElementById('search-input').value.trim());
+            
+            // Check if the query is not empty
+            if (query) {
+                // Redirect to the search endpoint with the new query parameter
+                window.location.href = '/search?query=' + query;
+            } else {
+                // Alert if no query is provided
+                alert('Please enter a search query.');
+            }
+        }
+    </script>
+
+
+    <!-- About Section  -->
+    <section class="about" id="about">
+      <h2>About CollegeMaster</h2>
+      <p>Empowering students to discover their ideal college.</p>
+      <div class="row company-info">
+        <h3>Team Story</h3>
+        <p>Team journey began with a passion for simplifying college searches. We strive to provide students with comprehensive tools and resources to explore and find their perfect match.        Through dedication and innovation, we continue to empower students on their path to higher education excellence.</p>
+      </div>
+      <div class="row mission-vision">
+        <h3>Team Mission</h3>
+        <p>Team mission is to empower students by providing them with intuitive tools and reliable resources to navigate their college search journey. We are committed to fostering informed decisions and helping students discover the educational opportunities that best align with their aspirations and goals.</p>
+        <h3>Team Vision</h3>
+        <p>Team vision is to revolutionize the college search experience, making it accessible and inspiring for every student. By leveraging technology and expertise, we envision a future where students confidently navigate their educational journey, equipped with the knowledge to achieve their fullest potential.</p>
+      </div>
+      <div class="row team">
+        <h3>Members</h3>
+        <ul>
+          <li>Kumar - Owner</li>
+          <li>Lokesh - Invester</li>
+          <li>Karan -  Product Owner</li>
+          <li>Shraddha - Product Invester</li>
+        </ul>
+      </div>
+    </section>
+
+
+   <!-- Contact Section  -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to us for any inquiries or feedback.</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+          <p><i class="material-icons">location_on</i> 245 Alan Street, New Road, 87321</p>
+          <p><i class="material-icons">email</i> contact@Collegemaster.com</p>
+          <p><i class="material-icons">email</i> email@Collegemaster.com</p>
+          <p><i class="material-icons">phone</i> 9967823450</p>
+          <p><i class="material-icons">access_time</i> Weekdays 10:00 AM - 6:00 PM</p>
+          <p><i class="material-icons">access_time</i> Weekends Closed</p>
+          <p><i class="material-icons">public</i> www.CollegeMaster.com</p>
+        </div>       
+        </div>
+        <div class="col form">
+          <form>
+            <input type="text" placeholder="Name*" required>
+            <input type="email" placeholder="Email*" required>
+            <textarea placeholder="Message*" required></textarea>
+            <button id="submit" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+   <!-- Footer Section -->
+     <footer>
+      <div>
+        <span>Copyright © 2024 All Rights Reserved</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Terms</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

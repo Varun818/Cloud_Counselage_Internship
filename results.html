@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeMaster.com</title>
+    <!-- stylesheet link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Material Icons used for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CollegeMaster</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+       <div style="display:flex; flex-direction:column; gap:5px;">
+      <div style="background-color:white; height:2px; width:25px;"></div>
+      <div style="background-color:white; height:2px; width:25px;"></div>
+       <div style="background-color:white; height:2px; width:25px;"></div>
+       </div>
+        </label>
+        <ul class="all-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+<!-- Table Section -->
+<table class="table">
+<caption>Search Results</caption>
+  <thead>
+    <th>College Name</th>
+    <th>College Address</th>
+    <th>Contact Number</th>
+    <th>Courses Offered</th>
+    <th>Duration</th>
+  </thead>
+  <tbody>
+    {% if results %}
+      {% for row in results %}
+      <tr>
+        <td data-label="College Name">{{ row.CollegeName }}</td>
+        <td data-label="College Address">{{ row.CollegeAddress }}</td>
+        <td data-label="Contact Number">{{ row.CollegePhoneNumber }}</td>
+        <td data-label="Courses Offered">{{ row.CourseName if row.CourseName else 'N/A' }}</td>
+        <td data-label="Duration">
+          {% if row.CourseDuration %}
+            {{ row.CourseDuration }} year{% if row.CourseDuration > 1 %}s{% endif %}
+          {% else %}
+            N/A
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    {% else %}
+    <tr>
+      <td colspan="5">No results found</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+<a href="/">Back to Search</a>
+
+
+<!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to us for any inquiries or feedback.</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+          <p><i class="material-icons">location_on</i> 245 Alan Street, New Road, 87321</p>
+          <p><i class="material-icons">email</i> contact@Collegemaster.com</p>
+          <p><i class="material-icons">email</i> email@Collegemaster.com</p>
+          <p><i class="material-icons">phone</i> 9967823450</p>
+          <p><i class="material-icons">access_time</i> Weekdays 10:00 AM - 6:00 PM</p>
+          <p><i class="material-icons">access_time</i> Weekends Closed</p>
+          <p><i class="material-icons">public</i> www.CollegeMaster.com</p>
+        </div>        
+        </div>
+        <div class="col form">
+          <form>
+            <input type="text" placeholder="Name*" required>
+            <input type="email" placeholder="Email*" required>
+            <textarea placeholder="Message*" required></textarea>
+            <button id="submit" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+<!--Footer Section -->
+    <footer>
+      <div>
+        <span>Copyright © 2024 All Rights Reserved</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Terms</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
