@@ -23,13 +23,17 @@
 <p>1. Put HTML files in template folder<br>
    2.Put css files and image in static folder<br>
    3.Import the mysql dump <br>
-    4.steps For importing mysql <br>
+    4.Steps For importing mysql <br>
     <pre>
         <code class="language-SQL">
       CREATE DATABASE new_database_name;
         </code>
       </pre>
-      mysql -u [your username] -p [new_database_name] < [dump_file.sql]<br>
+      <pre>
+          <code class="language-SQL">
+      mysql -u [your username] -p [new_database_name] < [dump_file.sql]
+      </code>
+      </pre>
       Then change db config in flask app like username , password and your databse name to your username , password and newly created databse name.<br>
    5.Open folder in VS code or any editor<br>
    6.Run the app.py and click on the localhost link generated.<br></p>
