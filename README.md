@@ -1,5 +1,5 @@
 # Cloud_Counselage_Internship
-<h2> About the project:College Search Application</h2>
+<h2> About the project : College Search Application</h2>
 
 <h3>Overview:</h3>
 
